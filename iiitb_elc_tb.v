@@ -45,8 +45,10 @@ $dumpvars(0,elevator_controller_tb);
 #200 reset =1'b0;
 #100 over_weight =1;
 #500 over_weight =0;
+
 //#50 reset = 1'b1;
 end
 always
 #50 clk=~clk;
+
 endmodule

@@ -4,8 +4,9 @@
 The project illustrates how an elevator
 controller can be designed for as many floors as per
 the requirement. Here, a 10-storey elevator
-control system has been proposed. The elevator
-decides the direction of movement of the elevator
+control system has been proposed. 
+
+The elevator decides the direction of movement of the elevator
 based on the request occurring at the instant. It also
 consists of a sensor which senses the weight of the
 people inside the elevator. If the weight inside the
@@ -14,6 +15,7 @@ the further movement of the elevator and also
 indicates that the weight inside elevator has
 exceeded the safe limit through the Weight Alert
 signal.
+
 Moreover it also has another sensor which
 senses the duration of the door being open.
 Normally the Door Alert signal is low but goes high

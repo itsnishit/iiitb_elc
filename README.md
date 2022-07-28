@@ -1,7 +1,7 @@
 # iiitb_elc - Elevator Controller
 
-## Introduction
-The project illustrates how an elevator
+## INTRODUCTION
+ The project illustrates how an elevator
 controller can be designed for as many floors as per
 the requirement. Here, a 10-storey elevator
 control system has been proposed. 
@@ -23,6 +23,10 @@ whenever the door has been open for more than
 three minutes. Furthermore, a sensor is situated at
 each floor indicating that the elevator has passed the
 current floor.
+
+## OVERVIEW LAYOUT 
+![image](https://user-images.githubusercontent.com/86912339/181421889-b4421784-15f3-4491-bd5a-a5abe78d6292.png)
+The layout shown below gives a brief idea as how the elevator controller would function
 
 
 ## Functional Simulation

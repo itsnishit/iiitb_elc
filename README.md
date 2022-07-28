@@ -1,5 +1,28 @@
 # iiitb_elc - Elevator Controller
 
+## Introduction
+The project illustrates how an elevator
+controller can be designed for as many floors as per
+the requirement. Here, a 10-storey elevator
+control system has been proposed. The elevator
+decides the direction of movement of the elevator
+based on the request occurring at the instant. It also
+consists of a sensor which senses the weight of the
+people inside the elevator. If the weight inside the
+elevator exceeds the maximum weight then it stops
+the further movement of the elevator and also
+indicates that the weight inside elevator has
+exceeded the safe limit through the Weight Alert
+signal.
+Moreover it also has another sensor which
+senses the duration of the door being open.
+Normally the Door Alert signal is low but goes high
+whenever the door has been open for more than
+three minutes. Furthermore, a sensor is situated at
+each floor indicating that the elevator has passed the
+current floor.
+
+
 ## Functional Simulation
 ### Tools Used
 To clone the Repository and download the required files for Simulation, enter the following commands in your terminal.

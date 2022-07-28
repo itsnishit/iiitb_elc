@@ -3,7 +3,7 @@ over_time, over_weight, weight_alert, door_alert, out_current_floor) ;
 
 //input pins
 input [7:0]request_floor; // the 8 bit input request floor
-input [7:0]in_current_floor; // the 8 bit input request floor,\
+input [7:0]in_current_floor; // the 8 bit input request floor,
 input clk; //-ve generate = low Frequency clock
 input reset; // the 1 bit input reset
 input over_time; //the 1 bit input which indicates the door keep open for 3 ninutes
@@ -31,7 +31,7 @@ reg clk_trigger;
 
 //match pins and registers
 assign direction=r_direction;
-assign conplete=r_complete;
+assign complete=r_complete;
 assign door_alert=r_door_alert;
 assign weight_alert=r_weight_alert;
 assign out_current_floor= r_out_current_floor;
@@ -44,6 +44,7 @@ clk_count=0;
 clk_trigger=1'b0;
 
 //reset clock registers
+r_direction=1'b0;
 r_complete=1'b0; // set the default value to 0
 r_door_alert=1'b0;//set the default value to 0
 r_weight_alert=1'b0; //set the default value to
@@ -95,7 +96,7 @@ end
 if (!reset && over_time)
 begin
 r_door_alert=1;
-r_complete=1;
+r_complete=0;
 r_weight_alert=0;
 r_direction=0;
 r_out_current_floor <= r_out_current_floor;
@@ -105,10 +106,9 @@ end
 else if(!reset && over_weight)begin
 r_door_alert=0;
 r_weight_alert=1;
-r_complete=1;
+r_complete=0;
 r_direction=0;
 r_out_current_floor <= r_out_current_floor;
 end
 end
 endmodule
-

@@ -25,8 +25,11 @@ each floor indicating that the elevator has passed the
 current floor.
 
 ## OVERVIEW LAYOUT 
+The layout shown below gives a brief idea as how the elevator controller would function keeping in mind the input control signals as well as the inbuilt sensors (flag variables).
+
 ![image](https://user-images.githubusercontent.com/86912339/181421889-b4421784-15f3-4491-bd5a-a5abe78d6292.png)
-The layout shown below gives a brief idea as how the elevator controller would function
+
+
 
 ## SIMULATIONS: WAVEFORM 
 ![image](https://user-images.githubusercontent.com/86912339/181697982-ae52f52b-0d68-4793-bf72-97d74ce055dd.png)

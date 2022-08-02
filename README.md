@@ -56,6 +56,19 @@ To install GTKWAVE, enter the following commands in your terminal
 
 ```$  sudo apt install gtkwave ```
 
+## Contributors
+> Nishit Chechani 
 
+> Kunal Gosh
+
+## Acknowledgments
+> Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.
+
+## Contact Information
+> Nishit Dinesh Chechani, Postgraduate Student, International Institute of Information Technology, Bangalore 
+> > E-Mail: nishitchechani@gmail.com
+
+> Kunal Ghosh, Director, VSD Corp. Pvt. Ltd
+> > E-Mail: kunalghosh@gmail.com
 
 

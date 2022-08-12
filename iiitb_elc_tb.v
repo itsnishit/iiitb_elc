@@ -28,27 +28,30 @@ iiitb_elc UUT(
 .weight_alert (weight_alert));
 
 
+
 //Generate the clock and test the circuit with different inputs
 initial
 begin
 $dumpfile ("elc.vcd"); 
 $dumpvars(0,elevator_controller_tb);
-#0 clk =1'b0; reset =1'b1; over_time=1'b0; over_weight=1'b0;
-#50 reset =1'b0;
-#50 request_floor = 8'b00000001; in_current_floor = 8'b10000000;
-//#50 reset =1;
-//#50 reset =0;
+#0 clk =1'b0; reset =1'b0; over_time=1'b0; over_weight=1'b0;
+//#50 reset =1'b0;
+#25 request_floor = 8'b00000001; in_current_floor = 8'b10000000;
+#25 reset =1;
+#50 reset =0;
 
 #50 over_time =1;
-#200 over_time =0;
-#50 reset =1'b1;
-#200 reset =1'b0;
-#100 over_weight =1;
-#500 over_weight =0;
+#50 over_time =0;
+//#50 reset =1'b1;
+//#70 reset =1'b0;
+#50 over_weight =1;
+#100 over_weight =0;
 
 //#50 reset = 1'b1;
 end
 always
-#50 clk=~clk;
+#25 clk=~clk;
 
 endmodule
+
+

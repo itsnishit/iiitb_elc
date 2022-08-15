@@ -1,9 +1,9 @@
 # iiitb_elc - Elevator Controller
 
 ## INTRODUCTION
- The project illustrates how an elevator
+ The project below illustrates how an elevator
 controller can be designed for as many floors as per
-the requirement. Here, a 10-storey elevator
+the requirement. Here, an 8-storey elevator
 control system has been proposed. 
 
 The elevator decides the direction of movement of the elevator

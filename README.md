@@ -1,5 +1,7 @@
 # iiitb_elc - Elevator Controller
 
+The major goal of this project is to implement an elevator controller chip using skywater 130nm Technology. The project is still under modification.
+
 ## INTRODUCTION
  The project below illustrates how an elevator
 controller can be designed for as many floors as per
@@ -31,11 +33,6 @@ The layout shown below gives a brief idea as how the elevator controller would f
 
 
 
-## SIMULATIONS: WAVEFORM 
-![image](https://user-images.githubusercontent.com/86912339/181697982-ae52f52b-0d68-4793-bf72-97d74ce055dd.png)
-
-
-
 ## Functional Simulation
 ### Tools Used
 To clone the Repository and download the required files for Simulation, enter the following commands in your terminal.
@@ -56,6 +53,13 @@ To install GTKWAVE, enter the following commands in your terminal
 
 ```$  sudo apt install gtkwave ```
 
+### WAVEFORM 
+![image](https://user-images.githubusercontent.com/86912339/181697982-ae52f52b-0d68-4793-bf72-97d74ce055dd.png)
+
+
+## Functional Simulation
+## Gate Level Synthesis (GLS)
+GLS is generating the simulation output by running test bench with netlist file generated from synthesis as design under test. Netlist is logically same as RTL code, therefore, same test bench can be used for it.The picture below gives an insight of the procedure. Here while using iverilog, you also include gate level verilog models to generate GLS simulation.
 ## Contributors
 > Nishit Chechani 
 

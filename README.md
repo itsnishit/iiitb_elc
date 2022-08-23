@@ -63,7 +63,7 @@ GLS is generating the simulation output by running test bench with netlist file 
 ## Contributors
 > Nishit Chechani 
 
-> Kunal Gosh
+> Kunal Ghosht
 
 ## Acknowledgments
 > Kunal Ghosh, Director, VSD Corp. Pvt. Ltd.

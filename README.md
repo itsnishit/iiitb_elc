@@ -104,6 +104,124 @@ The above picture shows a small portion of the netlist of the project after synt
 
 ![image](https://user-images.githubusercontent.com/86912339/186624359-c0235710-ff74-4886-8c4a-47d70ec57d13.png)
 
+# Layout
+
+## Preparation
+The layout is generated using OpenLane. To run a custom design on openlane, Navigate to the openlane folder and run the following commands:<br>
+```
+$ cd designs
+
+$ mkdir iiitb_elc
+
+$ cd iiitb_elc
+
+$ mkdir src
+
+$ touch config.json
+
+$ cd src
+
+$ touch iiitb_elc.v
+```
+The iiitb_elc.v file should contain the verilog RTL code you have used and got the post synthesis simulation for. <br>
+
+Copy  `sky130_fd_sc_hd__fast.lib`, `sky130_fd_sc_hd__slow.lib`, `sky130_fd_sc_hd__typical.lib` and `sky130_vsdinv.lef` files to `src` folder in your design. The final src folder should contain 5 files <br>
+
+The contents of the config.json are as follows. this can be modified as per requirement for your design as and when required. <br>
+
+NOTE: As mentioned by Kunal sir, remove defined `DIE_AREA` and `FP_SIZING : absolute`, use `FP_SIZING : relative`
+```
+{
+    "DESIGN_NAME": "iiitb_elc",
+    "VERILOG_FILES": "dir::src/iiitb_elc.v",
+    "CLOCK_PORT": "clk",
+    "CLOCK_NET": "clk",
+    "GLB_RESIZER_TIMING_OPTIMIZATIONS": true,
+    "CLOCK_PERIOD": 100,
+    "PL_RANDOM_GLB_PLACEMENT": 1,
+    "PL_TARGET_DENSITY": 0.9,
+    "FP_SIZING" : "relative",
+
+"LIB_SYNTH": "dir::src/sky130_fd_sc_hd__typical.lib",
+"LIB_FASTEST": "dir::src/sky130_fd_sc_hd__fast.lib",
+"LIB_SLOWEST": "dir::src/sky130_fd_sc_hd__slow.lib",
+"LIB_TYPICAL": "dir::src/sky130_fd_sc_hd__typical.lib",
+"TEST_EXTERNAL_GLOB": "dir::../iiitb_elc/src/*",
+"SYNTH_DRIVING_CELL":"sky130_vsdinv",
+
+    "pdk::sky130*": {
+        "FP_CORE_UTIL": 5,
+        "scl::sky130_fd_sc_hd": {
+            "FP_CORE_UTIL": 11
+        }
+    }
+}
+```
+
+
+After saving the changes, navigate to the Openlane directory in terminal and give the following command :<br>
+![image](https://user-images.githubusercontent.com/86912339/187433175-fcafe542-68cd-4c50-918a-dd3c48a13748.png)
+
+After entering the openlane container give the following command:<br>
+```
+$ ./flow.tcl interactive
+```
+This command will take you into the tcl console. In the tcl console type the following commands:<br>
+
+```
+% package require openlane 0.9
+% prep -design iiitb_freqdiv
+```
+![image](https://user-images.githubusercontent.com/86912339/187434250-a1627cc0-dd95-4a43-9e12-8be62b67aa60.png)
+
+## Synthesis 
+```
+% run_synthesis
+```
+![image](https://user-images.githubusercontent.com/86912339/187435853-da2c9e31-ecc3-4b78-8860-4a4b48f33686.png)
+
+### Synthesis Reports
+Statistics<br>
+<br>
+![image](https://user-images.githubusercontent.com/86912339/187436971-b48d6492-ceec-4936-a650-8a0c301de79d.png)<br>
+<br>
+
+
+## Floorplan
+```
+% run_floorplan
+```
+![image](https://user-images.githubusercontent.com/86912339/187438430-d1ae2570-de39-4294-ae8c-3ae0e0422dd0.png)<br>
+
+### Floorplan Reports
+Die Area <br>
+<br>
+![image](https://user-images.githubusercontent.com/86912339/187438948-6ff30254-e10f-438a-b0b2-f38556e3ed11.png)<br>
+<br>
+Core Area <br>
+<br>
+![image](https://user-images.githubusercontent.com/86912339/187439296-4e1ff4e9-4fc1-45d7-a6c2-5db850f301d2.png)<br>
+
+
+## Placement
+Navigate to results->placement and type the Magic command in terminal to open the floorplan <br>
+```
+$ magic -T /home/nishit/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merge.nom.lef def read iiitb_elc.def &
+```
+Floorplan view <br>
+<br>
+![image](https://user-images.githubusercontent.com/86912339/187447732-03cf2707-d7a9-497f-b60f-8afc207ef4f7.png)<br>
+<br>
+<br>
+All the cells are placed in the left corner of the floorplan<br>
+<br>
+![15](https://user-images.githubusercontent.com/62461290/187059629-b135d6dd-dd77-4a0d-a322-6c8864a6210c.png)
+
+
+
+
+
+
 
 ## Contributors
 > Nishit Chechani 

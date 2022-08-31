@@ -186,6 +186,11 @@ Statistics<br>
 ![image](https://user-images.githubusercontent.com/86912339/187436971-b48d6492-ceec-4936-a650-8a0c301de79d.png)<br>
 <br>
 
+Setup and Hold Slack after synthesis<br>
+<br>
+![image](https://user-images.githubusercontent.com/86912339/187608498-e937f11d-8565-4dc3-8478-fe24ac36cb83.png)<br>
+<br>
+
 
 ## Floorplan
 ```
@@ -203,19 +208,85 @@ Core Area <br>
 ![image](https://user-images.githubusercontent.com/86912339/187439296-4e1ff4e9-4fc1-45d7-a6c2-5db850f301d2.png)<br>
 
 
-## Placement
 Navigate to results->placement and type the Magic command in terminal to open the floorplan <br>
 ```
 $ magic -T /home/nishit/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merge.nom.lef def read iiitb_elc.def &
 ```
 Floorplan view <br>
 <br>
-![image](https://user-images.githubusercontent.com/86912339/187447732-03cf2707-d7a9-497f-b60f-8afc207ef4f7.png)<br>
+![image](https://user-images.githubusercontent.com/86912339/187609014-c9613d33-82c1-42e5-a642-b3b04c25bf57.png)<br>
 <br>
 <br>
-All the cells are placed in the left corner of the floorplan<br>
+
+## Placement
+```
+% run_placement
+```
+![image](https://user-images.githubusercontent.com/86912339/187609665-a7bf08bc-ceb8-4c64-8028-a4bf742de621.png)<br>
+
+### Placement Reports
+
+Navigate to results->placement and type the Magic command in terminal to open the floorplan <br>
+```
+$ magic -T /home/nishit/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merge.nom.lef def read iiitb_elc.def &
+```
+Placement view <br>
 <br>
-![15](https://user-images.githubusercontent.com/62461290/187059629-b135d6dd-dd77-4a0d-a322-6c8864a6210c.png)
+![image](https://user-images.githubusercontent.com/86912339/187609946-5ed9e35f-8f1c-4ac4-8580-eab50d4f82a9.png)<br>
+<br>
+<b>sky130_vsdinv</b> in the placement view :<br>
+<br>
+![image](https://user-images.githubusercontent.com/86912339/187610219-4cc3a555-888d-43f4-9bd0-d23e436e8ce8.png)
+<br>
+<br>
+The sky130_vsdinv should also reflect in the netlist after placement <br>
+<br>
+![image](https://user-images.githubusercontent.com/86912339/187610526-64d46252-f4a3-4274-b59d-72dce3d941fa.png)<br>
+
+## Clock Tree Synthesis (CTS)
+```
+% run_cts
+```
+<br>![image](https://user-images.githubusercontent.com/86912339/187610755-d7d9e2e4-ee5e-4735-b18f-a9b9b2f66ab0.png)<br>
+<br>
+Slack Report post CTS<br>
+<br>
+![image](https://user-images.githubusercontent.com/86912339/187611155-b6dadc2c-3591-4d49-8d35-1954dbd0ea6f.png)<br>
+<br>
+
+Clock Skew Report post CTS<br>
+<br>
+![image](https://user-images.githubusercontent.com/86912339/187611322-38de2697-5d88-47a0-936d-5167d4ea9945.png)<br>
+<br>
+
+Power Report post CTS<br>
+<br>![image](https://user-images.githubusercontent.com/86912339/187611440-33a9b5e7-fda1-4fee-a9ce-6101410431ef.png)<br>
+<br>
+
+## Routing
+```
+% run_routing
+```
+![22](https://user-images.githubusercontent.com/62461290/187060096-ad41aab7-6435-45c8-a266-e6ebb955d691.png)<br>
+
+### Routing Reports
+Navigate to results->routing and type the Magic command in terminal to open the routing view <br>
+```
+$ magic -T /home/nishit/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merge.nom.lef def read iiitb_elc.def &
+```
+Routing View<br>
+<br>
+![image](https://user-images.githubusercontent.com/86912339/187611810-9e468310-bdef-46b0-9d90-c7cc9ac263fa.png)<br>
+<br>
+<br>
+![image](https://user-images.githubusercontent.com/86912339/187611938-d6bd3d5a-a105-47ec-a48b-00eb0c111760.png)<br>
+<br>
+<b>sky130_vsdinv</b> in the routing view :<br>
+<br>
+![image](https://user-images.githubusercontent.com/86912339/187612076-1e1bc05d-f6b5-4809-bd23-8a6de0ab706c.png)<br>
+<br>
+
+
 
 
 

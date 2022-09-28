@@ -289,7 +289,7 @@ Routing View<br>
 # Final Results
 ### 1. Post Synthesis Gate count
 
-[image](https://user-images.githubusercontent.com/86912339/192704352-c7880cac-f8f7-4f32-ac47-ddfc4aa30971.png)
+![image](https://user-images.githubusercontent.com/86912339/192704352-c7880cac-f8f7-4f32-ac47-ddfc4aa30971.png)
 <br>
 
 <b><I> Gate Count = 83 </b></I> <br>

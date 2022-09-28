@@ -286,10 +286,60 @@ Routing View<br>
 ![image](https://user-images.githubusercontent.com/86912339/187612076-1e1bc05d-f6b5-4809-bd23-8a6de0ab706c.png)<br>
 <br>
 
+# Final Results
+### 1. Post Synthesis Gate count
 
+[image](https://user-images.githubusercontent.com/86912339/192704352-c7880cac-f8f7-4f32-ac47-ddfc4aa30971.png)
+<br>
 
+<b><I> Gate Count = 83 </b></I> <br>
 
+### 2. Area (box command)
+![image](https://user-images.githubusercontent.com/86912339/192704732-08eac072-5472-46d7-9c4c-da44938aad2b.png)
+<br>
 
+<b><I> Area = 14992.319 um^2</b></I> <br>
+
+### 3. Performance
+```
+$ sta <br>
+
+OpenSTA> read_liberty -max /home/nishit/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib <br>
+
+OpenSTA> read_liberty -min /home/nishit/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib <br>
+
+OpenSTA> read_verilog /home/nishit/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/iiitb_elc.v <br>
+
+OpenSTA> link_design iiitb_elc <br>
+
+OpenSTA> read_sdc /home/nishit/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/iiitb_elc.sdc <br>
+
+OpenSTA> read_spef /home/nishit/OpenLane/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/iiitb_elc.spef <br>
+
+OpenSTA> set_propagated_clock [all_clocks] <br>
+
+OpenSTA> report_checks <br>
+```
+![image](https://user-images.githubusercontent.com/86912339/192705643-ed0937d8-d815-4dc6-a808-cd5ebff80ac6.png)
+
+<b><I> Performance = 1/(clock period - slack) = 1/(100.32 - 98.83)ns = 0.671140 GHz </b></I><br>
+
+### 4. Flop/standard cell ratio
+
+![image](https://user-images.githubusercontent.com/86912339/192705998-6a3a5d80-e19b-4e5d-b2a2-1daf14b1d585.png)
+ <br>
+
+<b><I>Flop Ratio = Ratio of total number of flip flops / Total number of cells present in the design = 12/83 = 0.14457 </b></I><br>
+
+### 5. Power (internal, switching, leakage and total)
+
+![image](https://user-images.githubusercontent.com/86912339/192706267-a3215bf1-4aa4-4519-aad8-c3561171da1b.png)
+ <br>
+
+<b><I> Internal Power = 13.0 uW (65.4%) </b></I><br>
+<b><I> Switching Power = 6.91 uW (34.6%) </b></I><br>
+<b><I> Leakage Power = 0.637 nW (0.00%) </b></I><br>
+<b><I> Total Power = 20 uW (100%) </b></I><br>
 
 
 

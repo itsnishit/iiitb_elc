@@ -1,6 +1,6 @@
 # iiitb_elc - Elevator Controller
 
-The major goal of this project is to implement an elevator controller chip using skywater 130nm Technology. The project is still under modification.
+The major goal of this project is to implement an elevator controller chip using skywater 130nm Technology. The project is approved for Tapeout in MPW-8 shuttle.
 
 ## INTRODUCTION
  The project below illustrates how an elevator

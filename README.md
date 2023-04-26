@@ -325,7 +325,7 @@ OpenSTA> report_checks <br>
 ```
 ![image](https://user-images.githubusercontent.com/86912339/192705643-ed0937d8-d815-4dc6-a808-cd5ebff80ac6.png)
 
-<b><I> Performance = 1/(clock period - slack) = 1/(100.32 - 98.83)ns = 0.671140 GHz </b></I><br>
+<b><I> Performance = 1/(clock period - slack) = 1/(100 - 98.83)ns = 0.8547 GHz </b></I><br>
 
 ### 4. Flop/standard cell ratio
 

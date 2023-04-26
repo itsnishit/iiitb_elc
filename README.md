@@ -300,7 +300,10 @@ Routing View<br>
 
 <b><I> Area = 14992.319 um^2</b></I> <br>
 
-### 3. Performance
+### 3. Performance using OpenSTA
+To find the performance of the chip, the netlist generated after the clock tree synthesis is considered. The generated netlist is analysed and is found  to contain 12 flipflops. Now, reg to reg path for all the flipflops are calculated using OpenSTA tool. Then, the reg to reg path with the worst slack is considered for calculating the performance. 
+
+The steps followed are :
 ```
 $ sta <br>
 

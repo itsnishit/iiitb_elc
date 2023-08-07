@@ -24,56 +24,6 @@ reg r_door_alert;// 1 bit register connected to the output door_slert
 reg r_weight_alert; // 1 bit register connected to the output veigh alert
 reg [7:0] r_out_current_floor;// 8 bit register connected to the output out_current_floor;
 
-/*
-//Clock generator register
-reg [12:0] clk_count;
-// reg clk_200;
-reg clk_trigger;
-*/
-
-
-//initialization
-/*
-always@(negedge reset) 
-begin
-clk_200=1'b0;
-clk_count=0;
-clk_trigger=1'b0;
-
-//reset clock registers
-r_direction=1'b0;
-r_complete=1'b0; // set the default value to 0
-r_door_alert=1'b0;//set the default value to 0
-r_weight_alert=1'b0; //set the default value to 0
-r_out_current_floor <= in_current_floor;
-end
-*/
-/*
-//clock generator block
-always@(posedge clk)
-begin
-if(clk_trigger)
-clk_count=clk_count+1;
-if(clk_count==5000)
-begin
-clk_200=~clk_200;
-clk_count=0;
-end
-end
-*/
-
-//if request floor occurs
-/*
-always@(request_floor)
-begin
-//clk_trigger=1'b1;
-//clk_200=~clk_200;
-r_out_current_floor <= in_current_floor;
-end
-*/
-//normal running case of elevator
-
-
 
 always@(posedge clk)
 begin
